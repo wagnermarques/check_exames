@@ -2,8 +2,9 @@
 //https://www.sqlite.org/cli.html
 
 const sqlite3 = require('sqlite3').verbose();
+
 let dbFile = "db_data.db";
-debugger
+
 let conn = new sqlite3.Database(dbFile, (err) => {
   if (err) {
     return console.error(err.message);
@@ -12,9 +13,12 @@ let conn = new sqlite3.Database(dbFile, (err) => {
     
 });
 
-console.log('funcionou1');
+let sqlCreateTableExame = "CREATE TABLE exames (
+    id INT PRIMARY KEY, 
+    dt TEXT)");
+
 conn.serialize(function() {
-conn.run("CREATE TABLE user (id INT, dt TEXT)");
+    conn.run(sqlCreateTableExame);
 console.log('funcionou2');
 
 var stmt = conn.prepare("INSERT INTO user VALUES (?,?)");
@@ -31,9 +35,11 @@ var stmt = conn.prepare("INSERT INTO user VALUES (?,?)");
   });
 });
 
-module.export = persistence_interface = {
-
+module.export = persistence_interface = {    
     
+    config_database : function(){
+
+    },
     
     close_connection : function(){
        conn.close();
