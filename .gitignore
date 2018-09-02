@@ -2,5 +2,6 @@ node_modules/
 *shell*
 .#*
 #*
+*/**/*.min.js
 db_data.db
 
