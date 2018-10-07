@@ -7,6 +7,4 @@ branches:
     - master
 deploy:
   provider: heroku
-  api_key:
-    secure: "YOUR ENCRYPTED API KEY"
-    app:checkexames
+  app:checkexames
