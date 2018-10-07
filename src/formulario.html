@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+    <head>
+        <title>Formulario de exames</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+    </head>
+
+    <body>
+
+        <div class="jumbotron text-center">
+            <h3>Exames de Rotina - Realizados em Laboratório Referenciado</h3>
+            <h5>Bioquimica Clinica - Material de Sangue</h5> 
+        </div>
+
+
+        <div class="container" >
+
+
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+                <button type="submit" 
+                        aria-expanded="false" aria-label="Toggle navigation">SALVAR2</button>
+                </button>
+                <button aria-expanded="false" aria-label="Toggle navigation" onclick="window.location='http://localhost:3000/view_listar'">LISTAR</button>
+            </nav>
+            
+	    <form action="/exames_form" method="post" enctype="application/x-www-form-urlencoded">
+                <button aria-expanded="false" aria-label="Toggle navigation">SALVAR</button>                
+	        <div class="row">
+                    
+		    <div class="col-sm-4">
+		        
+			<h4>Eletroforese</h4>
+			<input name="eletroforese_de_hemoglobina" id="eletroforese_de_hemoglobina" type="checkbox"></input>
+			<label for="eletroforese_de_hemoglobina">Eletroforese de hemoglobina</label></br>
+		        
+			<input name="eletroforese_de_proteina" id="eletroforese_de_proteina" type="checkbox"></input>
+			<label for="eletroforese_de_proteina">Eletroforese de proteína</label></br>
+
+	                
+			<h4>Eletrólitos</h4>
+			<input name="sodio" id="sodio" type="checkbox"></input>
+			<label for="sodio">Sódio</label></br>
+			
+			<input name="potassio" id="potassio" type="checkbox"></input>
+			<label for="potassio">Potássio</label></br>
+			
+			<input name="calcio" id="calcio"type="checkbox"></input>
+			<label for="calcio">Cálcio</label></br>
+			
+			<input name="fosforo" id="magnesio"type="checkbox"></input>
+			<label for="magnesio">Magnésio</label></br>
+			
+			<input name="fosforo" id="fosforo"type="checkbox"></input>
+			<label for="fosforo">Fósforo</label></br>
+			
+			<input name="cloro" id="cloro"type="checkbox"></input>
+			<label for="cloro">Cloro</label></br>
+	  	        
+			<h4>Enzimas</h4>
+			<input name="aldolase" id="aldolase" type="checkbox"></input>
+			<label for="aldolase">Aldolase</label></br>
+			
+			<input name="potassio" id="potassio" type="checkbox"></input>
+			<label for="potassio">Potássio</label></br>
+			
+			<input name="calcio" id="calcio"type="checkbox"></input>
+			<label for="calcio">Cálcio</label></br>
+			
+			<input name="fosforo" id="magnesio"type="checkbox"></input>
+			<label for="magnesio">Magnésio</label></br>
+			
+			<input name="fosforo" id="fosforo"type="checkbox"></input>
+			<label for="fosforo">Fósforo</label></br>
+			
+			<input name="cloro" id="cloro"type="checkbox"></input>
+			<label for="cloro">Cloro</label></br>
+		    </div>
+	            
+		    <div class="col-sm-4">
+			<h4>Função Hepática / Pancreática</h4>
+			<input name="Amilase" id="Amilase" type="checkbox"></input>
+			<label for="Amilase"> Amilase</label></br>
+			
+			<input name="Lipase" id="Lipase" type="checkbox"></input>
+			<label for="Lipase"> Lipase</label></br>
+			
+			<input name="Fosfase_Alcalina" id="Fosfase_Alcalina" type="checkbox"></input>
+			<label for="Fosfase_Alcalina"> Fosfase Alcalina</label></br>
+			
+			<input name="Gama_GT" id="Gama_GT" type="checkbox"></input>
+			<label for="Gama_GT"> Gama GT</label></br>
+			
+			<input name="TGO_AST" id="TGO_AST" type="checkbox"></input>
+			<label for="TGO_AST"> TGO/ AST</label></br>
+			
+			<input name="TGP_ALT" id="TGP_ALT" type="checkbox"></input>
+			<label for="TGP_ALT"> TGP/ ALT</label></br>
+			
+			<input name="Bilirrubina" id="Bilirrubina" type="checkbox"></input>
+			<label for="Bilirrubina"> Bilirrubina total e frações</label></br>
+	                
+			<h4>Função Renal</h4>
+			<input name="Cretinina" id="Cretinina" type="checkbox"></input>
+			<label for="Cretinina">Cretinina</label></br>
+			
+			<input name="Ureia" id="Ureia" type="checkbox"></input>
+			<label for="Ureia"> Uréia</label></br>
+                        
+			<h4>Lípides</h4>
+			<input name="Colesterol" id="Colesterol" type="checkbox"></input>
+			<label for="Colesterol">Colesterol</label></br>
+			
+			<input name="HDL_Colesterol" id="HDL_Colesterol" type="checkbox"></input>
+			<label for="HDL_Colesterol">HDL Colesterol</label></br>
+			
+			<input name="VLDL_Colesterol" id="VLDL_Colesterol" type="checkbox"></input>
+			<label for="VLDL_Colesterol">VLDL Colesterol</label></br>
+			
+			<input name="LDL_Colesterol" id="LDL_Colesterol" type="checkbox"></input>
+			<label for="LDL_Colesterol">LDL Colesterol</label></br>
+			
+			<input name="Triglicerides" id="Triglicerides" type="checkbox"></input>
+			<label for="Triglicerides">Triglicerides</label></br>
+			
+			<input name="nameex" id="nameex" type="checkbox"></input>
+			<label for="nameex">nameex</label></br>
+			
+		    </div>
+	            
+		    <div class="col-sm-4">
+			<h4>Monitoração Terapêutica</h4>
+			<input name="acido_Valproico" id="acido_Valproico" type="checkbox"></input>
+			<label for="acido_Valproico"> Ácido Valproico</label></br>
+			
+			<input name="Benzodiazepinicos" id="Benzodiazepinicos" type="checkbox"></input>
+			<label for="Benzodiazepinicos">Benzodiazepínicos</label></br>
+			
+			<input name="Carbamazepina" id="Carbamazepina" type="checkbox"></input>
+			<label for="Carbamazepina">Carbamazepina</label></br>
+			
+			<input name="Fenobarbital" id="Fenobarbital" type="checkbox"></input>
+			<label for="Fenobarbital">Fenobarbital</label></br>
+			
+			<input name="Barbituricos" id="Barbituricos" type="checkbox"></input>
+			<label for="Barbituricos">Barbitúricos</label></br>
+			
+			<input name="Digoxina" id="Digoxina" type="checkbox"></input>
+			<label for="Digoxina">Digoxina</label></br>
+			
+			<input name="Fenitoina" id="Fenitoina" type="checkbox"></input>
+			<label for="Fenitoina">Fenitoína</label></br>
+	                
+			Outros:<br>
+			<textarea name="Outros " id="outros_MonTerapeutica " rows="3" cols="20"></textarea><br>		
+			<label for="outros_MonTerapeutica "></label></br>
+	                
+			<h4>Outros testes</h4>
+			<input name="Acido_Urico" id="Acido_Urico" type="checkbox"></input>
+			<label for="Acido_Urico"> Ácido Úrico</label></br>
+			
+			<input name="Ferritina" id="Ferritina" type="checkbox"></input>
+			<label for="Ferritina"> Ferritina</label></br>
+			
+			<input name="Ferro" id="Ferro" type="checkbox"></input>
+			<label for="Ferro"> Ferro</label></br>
+			
+			<input name="Transferrina" id="Transferrina" type="checkbox"></input>
+			<label for="Transferrina"> Transferrina</label></br>
+			
+			<input name="Glicose" id="Glicose" type="checkbox"></input>
+			<label for="Glicose"> Glicose</label></br>
+			
+			<input name="Hb_glicada" id="Hb_glicada" type="checkbox"></input>
+			<label for="Hb_glicada">Hb glicada</label></br>
+			
+			<input name="Vitamina_B12" id="Vitamina_B12" type="checkbox"></input>
+			<label for="Vitamina_B12">Vitamina B12</label></br>
+			
+			<input name="Vitamina_D" id="Vitamina_D" type="checkbox"></input>
+			<label for="Vitamina_D">Vitamina D</label></br>  
+		    </div>
+
+                    
+		    <div class="col-sm-4">
+			<h4>Imunologia-Sorologia p/ Doenças Infecciosas</h4>
+			<input name="Adenovirus" id="Adenovirus" type="checkbox"></input>
+			<label for="Adenovirus"> Adenovirus</label></br>
+			
+			<input name="Citomegalovirus" id="Citomegalovirus" type="checkbox"></input>
+			<label for="Citomegalovirus"> Citomegalovirus (CMV)</label></br>
+			
+			<input name="HepatiteA" id="HepatiteA" type="checkbox"></input>
+			<label for="HepatiteA"> Hepatite A</label></br>
+			
+			<input name="HepatiteB" id="HepatiteB" type="checkbox"></input>
+			<label for="HepatiteB"> Hepatite B</label></br>
+			
+			<input name="HepatiteC" id="HepatiteC" type="checkbox"></input>
+			<label for="HepatiteC"> Hepatite C</label></br>
+			
+			<input name="Herpes_simples1/2" id="Herpes_simples1/2" type="checkbox"></input>
+			<label for="Herpes_simples1/2"> Herpes simples 1/2</label></br>
+			
+			<input name="HIV_1/2" id="HIV_1/2" type="checkbox"></input>
+			<label for="HIV_1/2">HIV 1/2</label></br>
+			
+			<input name="HTLV_1/2" id="HTLV/2" type="checkbox"></input>
+			<label for="HTLV_1/2">HTLV 1/2</label></br>
+			
+			<input name="EBV" id="EBV" type="checkbox"></input>
+			<label for="EBV"> Mononucleose Infecciosa (EBV)</label></br>
+			
+			<input name="Rubeola" id="Rubeola" type="checkbox"></input>
+			<label for="Rubeola"> Rubéola</label></br>
+			
+			<input name="Sifilis_completa" id="Sifilis_completa" type="checkbox"></input>
+			<label for="Sifilis_completa"> Sífilis (completa)</label></br>
+			
+			<input name="Sifilis_VDRL" id="Sifilis_VDRL" type="checkbox"></input>
+			<label for="Sifilis_VDRL"> Sífilis (VDRL)</label></br>
+			
+			<input name="Toxoplasmose" id="Toxoplasmose" type="checkbox"></input>
+			<label for="Toxoplasmose"> Toxoplasmose</label></br>
+		        
+			<h4>Autoimunidade (material sangue)</h4>
+			<input name="FAN _Hep2" id="FAN _Hep2" type="checkbox"></input><label for="FAN _Hep2"> FAN (Hep-2)</label></br>
+			<input name="Anti-DNA" id="Anti-DNA" type="checkbox"></input><label for="Anti-DNA"> Anti-DNA</label></br>
+			<input name="AntiSSA/Ro" id="AntiSSA/Ro"type="checkbox"></input><label for="AntiSSA/Ro"> AntiSSA/Ro</label></br>
+			<input name="Anti-SSB/La" id="Anti-SSB/La"type="checkbox"></input><label for="Anti-SSB/La">Anti-SSB/La</label></br>
+			<input name="Anti-Sm" id="Anti-Sm"type="checkbox"></input><label for="Anti-Sm"> Anti-Sm</label></br>
+			<input name="Anti-RNP" id="Anti-RNP"type="checkbox"></input><label for="Anti-RNP"> Anti-RNP</label></br>
+			<input name="Anti-ENA" id="Anti-ENA"type="checkbox"></input><label for="Anti-ENA"> Anti-ENA</label></br>
+			<input name="Fator_Reumatoide" id="Fator_Reumatoide"type="checkbox"></input><label for="Fator_Reumatoide"> Fator Reumatóide</label></br>
+			<input name="P-ANCA" id="P-ANCA"type="checkbox"></input><label for="P-ANCA"> P-ANCA</label></br>
+			<input name="C-ANCA" id="C-ANCA"type="checkbox"></input><label for="C-ANCA"> C-ANCA</label></br>
+	  	        
+			<h4>Proteínas Especificas e outros testes</h4>
+			<input name="ASLO" id="ASLO" type="checkbox"></input><label for="ASLO">ASLO</label></br>
+			<input name="Beta-HCG_Quantitativo" id="Beta-HCG_Quantitativo" type="checkbox"></input><label for="Beta-HCG_Quantitativo"> Beta-HCG Quantitativo</label></br>
+			<input name="Complemento_C3" id="Complemento_C3"type="checkbox"></input><label for="Complemento_C3"> Complemento C3</label></br>
+			<input name="Complemento_C4" id="Complemento_C4"type="checkbox"></input><label for="Complemento_C4"> Complemento C4</label></br>
+			<input name="IgE_Total" id="IgE_Total"type="checkbox"></input><label for="IgE_Total"> IgE Total</label></br>
+			<input name="PCR" id="PCR"type="checkbox"></input><label for="PCR"> PCR (Proteina C Reativa)</label></br>
+		    </div>
+	            
+		    <div class="col-sm-4">
+			<h4>Hormônios</h4>
+			<input name="TSH" id="TSH" type="checkbox"></input><label for="TSH"> TSH</label></br>
+			<input name="T4L" id="T4L" type="checkbox"></input><label for="T4L"> T4L</label></br>
+			<input name="T3" id="T3" type="checkbox"></input><label for="T3"> T3</label></br>
+			<input name="T4" id="T4" type="checkbox"></input><label for="T4"> T4</label></br>
+			<input name="Anti-TPO" id="Anti-TPO" type="checkbox"></input><label for="Anti-TPO"> Anti-TPO</label></br>
+			<input name="Anti-tireoglobulina" id="Anti-tireoglobulina" type="checkbox"></input><label for="Anti-tireoglobulina"> Anti-tireoglobulina</label></br>
+			<input name="GH" id="GH" type="checkbox"></input><label for="GH"> GH</label></br>
+			<input name="PTH" id="PTH" type="checkbox"></input><label for="PTH"> PTH</label></br>
+			<input name="LH" id="LH" type="checkbox"></input><label for="LH"> LH</label></br>
+			<input name="FSH" id="FSH" type="checkbox"></input><label for="FSH"> FSH</label></br>
+		        
+			<input name="Prolactina" id="Prolactina" type="checkbox"></input><label for="Prolactina"> Prolactina</label></br>
+			<input name="Estradiol" id="Estradiol" type="checkbox"></input><label for="Estradiol"> Estradiol</label></br>
+			<input name="Androstenediona" id="Androstenediona" type="checkbox"></input><label for="Androstenediona"> Androstenediona</label></br>
+			<input name="Testosterona" id="Testosterona" type="checkbox"></input><label for="Testosterona"> Testosterona</label></br>
+			<input name="Testosterona_Livre" id="Testosterona_Livre" type="checkbox"></input><label for="Testosterona_Livre"> Testosterona Livre</label></br>
+			<input name="ACTH" id="ACTH" type="checkbox"></input><label for="ACTH"> ACTH</label></br>
+			<input name="Cortisol_Serico" id="Cortisol_Serico" type="checkbox"></input><label for="Cortisol_Serico"> Cortisol Sérico</label></br>
+			<input name="Cortisol_Urinario" id="Cortisol_Urinario" type="checkbox"></input><label for="Cortisol_Urinario"> Cortisol Urinário</label></br>
+			<input name="Aldosterona" id="Aldosterona" type="checkbox"></input><label for="Aldosterona"> Aldosterona</label></br>
+			<input name="Aldolase" id="Aldolase" type="checkbox"></input><label for="Aldolase"> Aldolase</label></br>
+			<input name="Insulina" id="Insulina" type="checkbox"></input><label for="Insulina"> Insulina</label></br>
+			<input name="Peptídeo_c" id="Peptídeo_c" type="checkbox"></input><label for="Peptídeo_c"> Peptídeo c</label></br>
+			
+			Outros:<br>
+			<textarea name="outroHormonio" id="outroHormonio" type="checkbox" rows="3" cols="20"></textarea><br>
+			<label for="outroHormonio"></label></br>
+
+			<h4>Culturas - outros materiais</h4>
+			<input name="Coprocultura" id="Coprocultura" type="checkbox"></input><label for="Coprocultura"> Coprocultura</label></br>
+			<input name="Cultura_de_BK" id="Cultura_de_BK" type="checkbox"></input><label for="Cultura_de_BK"> Cultura de BK /Material:</label></br>
+			<input name="Cultura_de_fungos" id="Cultura_de_fungos" type="checkbox"></input><label for="Cultura_de_fungos"> Cultura de fungos /Material:</label></br>
+			<input name="Fungigrama" id="Fungigrama" type="checkbox"></input><label for="Fungigrama"> Fungigrama</label></br>
+			<input name="Cultura_de_Secrecao" id="Cultura_de_Secrecao" type="checkbox"></input><label for="Cultura_de_Secrecao"> Cultura de Secreção / Material</label></br>
+			<input name="Antibiograma" id="Antibiograma" type="checkbox"></input><label for="Antibiograma"> Antibiograma</label></br>
+		        
+			<h4>Parasitologia Clinica</h4>
+			<input name="PPF" id="PPF" type="checkbox"></input><label for="PPF"> PPF</label></br>
+			<input name="Anal_Swab" id="Anal_Swab" type="checkbox"></input><label for="Anal_Swab"> Anal Swab</label></br>
+		        
+		    </div>
+	            
+		    <div class="col-sm-4">
+			<h4>Hematologia - Material Sangue</h4>
+			<input name="Hemograma_Completo" id="Hemograma_Completo" type="checkbox"></input><label for="Hemograma_Completo"> Hemograma Completo</label></br>
+			<input name="Hb+Ht" id="Hb+Ht" type="checkbox"></input><label for="Hb+Ht"> Hb + Ht</label></br>
+			<input name="Plaquetas" id="Plaquetas" type="checkbox"></input><label for="Plaquetas"> Plaquetas</label></br>
+			<input name="Reticuloticos " id="Reticuloticos " type="checkbox"></input><label for="Reticuloticos "> Reticulóticos </label></br>
+			<input name="VHS" id="VHS" type="checkbox"></input><label for="VHS">VHS</label></br>
+			<input name="Celulas_LE" id="Celulas_LE" type="checkbox"></input><label for="Celulas_LE"> Células LE</label></br>
+			<input name="Falcização_Hemacias" id="Falcização_Hemacias" type="checkbox"></input><label for="Falcização_Hemacias">Falcização de Hemácias</label></br>
+	                
+			<h4>Coagulação</h4>
+			<input name="Coagulograma" id="Coagulograma" type="checkbox"></input><label for="Coagulograma">Coagulograma (TP, TTPA e TT)</label></br>
+			<input name="Tempo_Protrombina" id="Tempo_Protrombina" type="checkbox"></input><label for="Tempo_Protrombina">Tempo de Protrombina</label></br>
+			<input name="Tempo_Tromboplastina_Ativado" id="Tempo_Tromboplastina_Ativado" type="checkbox"></input><label for="Tempo_Tromboplastina_Ativado">Tempo de Tromboplastina Ativado</label></br>
+			<input name="Tempo_Trombina" id="Tempo_Trombina" type="checkbox"></input><label for="Tempo_Trombina">Tempo de Trombina</label></br>
+			<input name="Dimero-d" id="Dimero-d" type="checkbox"></input><label for="Dimero-d">Dímero-d</label></br>
+	                
+			<h4>Bioquimica Clinica/ Cultura : Material URINA amostra isolada/24 horas</h4>
+			<input name="Clerance_Creatinina" id="Clerance_Creatinina" type="checkbox"></input><label for="Clerance_Creatinina"> Clerance Creatinina</label></br>
+			<input name="Citrato" id="Citrato" type="checkbox"></input><label for="Citrato"> Citrato</label></br>
+			<input name="Calcio" id="Calcio" type="checkbox"></input><label for="Calcio"> Cálcio</label></br>
+			<input name="Oxalato" id="Oxalato" type="checkbox"></input><label for="Oxalato"> Oxalato</label></br>
+			<input name="Proteinura" id="Proteinura" type="checkbox"></input><label for="Proteinura"> Proteinúra</label></br>
+			<input name="Acido_Vanilmandélico" id="Acido_Vanilmandélico" type="checkbox"></input><label for="Acido_Vanilmandélico"> Ácido Vanilmandélico</label></br>
+			
+			<input name="Sodio" id="Sodio" type="checkbox"></input><label for="Sodio"> Sódio</label></br>
+			<input name="Acido_Urico" id="Acido_Urico" type="checkbox"></input><label for="Acido_Urico"> Ácido Úrico</label></br>
+			<input name="Cistina" id="Cistina" type="checkbox"></input><label for="Cistina"> Cistina</label></br>
+			<input name="Potassio" id="Potassio" type="checkbox"></input><label for="Potassio"> Potássio</label></br>		
+			<input name="Microalbuminuria" id="Microalbuminuria" type="checkbox"></input><label for="Microalbuminuria"> Microalbuminúria</label></br>
+			<input name="Urina_I" id="Urina_I" type="checkbox"></input><label for="Urina_I"> Urina I</label></br>
+			<input name="Urocultura" id="Urocultura" type="checkbox"></input><label for="Urocultura"> Urocultura</label></br>
+			<input name="Antibiograma" id="Antibiograma" type="checkbox"></input><label for="Antibiograma"> Antibiograma</label></br>	
+		    </div>
+                    
+	        </div>
+		
+	        <div class = "row">
+		    <input id = "btn_Save" type = "submit" Value ="Salvar"></input>		
+	        </div> 
+	    </form>
+	    
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+</body>
+</html>

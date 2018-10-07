@@ -1,0 +1,6 @@
+{
+    "suites": [
+        "tests/unit/**/*.js",
+        "tests/integration/**/*.js"
+    ]        
+}

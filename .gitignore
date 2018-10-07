@@ -3,5 +3,5 @@ node_modules/
 .#*
 #*
 */**/*.min.js
-db_data.db
+*.db
 

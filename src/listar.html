@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+    <head>
+        <title>Formulario de exames</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+    </head>
+    <script type="text/javascript">
+        $( document ).ready(function() {
+        $.ajax({
+        url:"http://localhost:3000/select_all_exames",                 
+        success: function(result){
+        result.forEach((item)=>{
+        Object.keys(item).forEach((key)=>{
+        let color="";
+        let i=0;
+        i++;
+        console.log(i);
+        if(i%2==0){
+        document.getElementById("divListaDeExames").innerHTML +="<p style='background-color:yellow'>"+ key +" = "+item[key]+"</p>";
+        }else{
+        document.getElementById("divListaDeExames").innerHTML +="<p style='background-color:LightGoldenRodYellow'>"+ key +" = "+item[key]+"</p>";
+        }
+        
+            });
+             //
+            });
+          }
+         });
+        });
+    </script>
+    <body>
+
+        <div class="jumbotron text-center">
+            <h3>Exames de Rotina - Realizados em Laboratório Referenciado</h3>
+            <h5>Bioquimica Clinica - Material de Sangue</h5> 
+        </div>
+
+
+        <div class="container" >
+            <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+                <button aria-expanded="false" aria-label="Toggle navigation" onclick="window.location='http://localhost:3000/'">VOLTAR</button>
+                </button>
+            </nav>
+            <div id="divListaDeExames">
+            </div>
+        </div> 
+</body>
+</html>

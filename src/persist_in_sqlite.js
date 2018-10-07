@@ -1,51 +1,57 @@
-//http://www.sqlitetutorial.net/sqlite-nodejs/connect/
-//https://www.sqlite.org/cli.html
+var sqlUtils = require("./sqlUtils.js").sqlUtils;
+var sqlCreateTblExamesTable = require("./sqlUtils_CreateTableInstruction.js").sqlCreateTblExamesTable;
 
 const sqlite3 = require('sqlite3').verbose();
 
-let dbFile = "db_data.db";
-
-let conn = new sqlite3.Database(dbFile, (err) => {
-  if (err) {
-    return console.error(err.message);
-  }
-    console.log('sqlite3 Connection was sucefull .');
-    
-});
-
-
-let TableName="tbl_exames";
-
-let sqlCreateTableExame = "CREATE TABLE "+TableName+
-    "("+
-       "id integer PRIMARY KEY AUTOINCREMENT, "+
-       "nome varchar(100),"+
-       "nome_exame TEXT "+
-    ")";
-
-
 exports.persistence = {    
+
+    getDb : function(){
+        return this._db;
+    },
     
-    generateDatabase : function(){
-        conn.run(sqlCreateTableExame);
+    setDb : function(sqlite3DbToOperateOn){
+        //if you wants persistence to acture on another db
+        //create your db outside this module and pass it to this function
+        //this function was create in order to test this module
+        //the tests will actuate in test database
+        //in test suite each testcase actue on a its own database
+        this._db = sqlite3DbToOperateOn;
+    },
+    
+    createDatabase : function(){        
+        let dbFile = "db_data.db";        
+        let dbCreated = new sqlite3.Database(dbFile, (err) => {
+            if (err) {
+                return console.error(err.message);
+            }
+        });
+        console.log("sqlCreateTblExamesTable");
+        console.log(sqlCreateTblExamesTable);
+        
+        dbCreated.run(sqlCreateTblExamesTable);
+        this.setDb(dbCreated);
     },
         
-    close_connection : function(){
-       conn.close();
+    close_connection : function(){        
+        db.close();        
     },
     
-    persist : function(p1,p2){
-        console.log(" persist : function("+p1+","+p2+"){...");
-        var stmt = conn.prepare("INSERT INTO "+TableName+" VALUES ("+p1+","+p2+")");
-        stmt.run(p1, p2);
-        stmt.finalize();
+    persist : function(obj,tableName){
+        let insertSql = sqlUtils.writeInsertSql_FromObjectWithBooleanAttributes_Using01Values(obj,tableName);
+        console.log(insertSql);
+        this._db.run(insertSql);
     },
 
     select : function(sqlSelect){
-        conn.each(sqlSelect, function(err, row) {
-            console.log("Exame id : "+row.id, row.nome,row.nome_exame);
+        return new Promise((resolve,reject)=>{
+            let arrResult = [];
+            this._db.all(sqlSelect, function(err, rows) {
+                if(err){
+                    reject(err);
+                }else{
+                    resolve(rows);
+                }
+            });
         });
     }
 }
-
-
