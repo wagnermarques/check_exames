@@ -8,4 +8,6 @@ https://checkexames.herokuapp.com/
 Um simples formulário com checklist de exames com nodejs express e
 sqlite
 
+warn: the tests are not still good. Do not use this app yet.
+
 
