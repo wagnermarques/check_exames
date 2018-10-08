@@ -10,31 +10,14 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/themes/redmond/jquery-ui.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/free-jqgrid/4.15.4/css/ui.jqgrid.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/free-jqgrid/4.15.4/jquery.jqgrid.min.js"></script>
+
+        <script type="text/javascript" src="./generate_grid.js"> </script>
     </head>
-    <script type="text/javascript">
-        $( document ).ready(function() {
-        $.ajax({
-        url:"http://localhost:3000/select_all_exames",                 
-        success: function(result){
-        result.forEach((item)=>{
-        Object.keys(item).forEach((key)=>{
-        let color="";
-        let i=0;
-        i++;
-        console.log(i);
-        if(i%2==0){
-        document.getElementById("divListaDeExames").innerHTML +="<p style='background-color:yellow'>"+ key +" = "+item[key]+"</p>";
-        }else{
-        document.getElementById("divListaDeExames").innerHTML +="<p style='background-color:LightGoldenRodYellow'>"+ key +" = "+item[key]+"</p>";
-        }
-        
-            });
-             //
-            });
-          }
-         });
-        });
-    </script>
+
     <body>
 
         <div class="jumbotron text-center">
@@ -48,7 +31,9 @@
                 <button aria-expanded="false" aria-label="Toggle navigation" onclick="window.location='http://localhost:3000/'">VOLTAR</button>
                 </button>
             </nav>
-            <div id="divListaDeExames">
+            <div id="#grid-div">
+                <table id="grid"></table>
+                <table id="list4"></table>
             </div>
         </div> 
 </body>
