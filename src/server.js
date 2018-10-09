@@ -23,6 +23,8 @@ appExpress.get('/view_listar', function(req, res){
     res.sendFile(__dirname + '/listar.html');
 });
 
+delete(appExpress.cache);
+
 appExpress.use(express.static(__dirname + '/public'));
 
 http.listen(3000, function(){
