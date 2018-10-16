@@ -37,9 +37,13 @@ exports.persistence = {
     },
     
     persist : function(obj,tableName){
-        let insertSql = sqlUtils.writeInsertSql_FromObjectWithBooleanAttributes_Using01Values(obj,tableName);
-        console.log(insertSql);
-        this._db.run(insertSql);
+        try {
+            let insertSql = sqlUtils.writeInsertSql_FromObjectWithBooleanAttributes_Using01Values(obj,tableName);
+            console.log(insertSql);
+            this._db.run(insertSql);
+        } catch(err) {
+            console.log(err.message);
+        }
     },
 
     select : function(sqlSelect){
