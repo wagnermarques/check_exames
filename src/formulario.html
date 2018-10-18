@@ -21,14 +21,16 @@
 
 
             <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-                <button type="submit" 
-                        aria-expanded="false" aria-label="Toggle navigation">SALVAR2</button>
-                </button>
+                <button id="salvar" type="submit" aria-expanded="false" aria-label="Toggle navigation">SALVAR2</button>
+                <script>
+                 document.getElementById("salvar").onclick = function() {
+                     document.getElementById("form-exames").submit();
+                 }
+                </script>
                 <button aria-expanded="false" aria-label="Toggle navigation" onclick="window.location='http://localhost:3000/view_listar'">LISTAR</button>
             </nav>
             
-	    <form action="/exames_form" method="post" enctype="application/x-www-form-urlencoded">
-                <button aria-expanded="false" aria-label="Toggle navigation">SALVAR</button><br></br>
+	    <form id="form-exames" action="/exames_form" method="post" enctype="application/x-www-form-urlencoded">
                 <label for="nome">Nome:</label>
                 <input name="nome" id="nome" type="text" style="width:100%"></input>
 	        <div class="row">                    
@@ -123,10 +125,6 @@
 			
 			<input name="Triglicerides" id="Triglicerides" type="checkbox"></input>
 			<label for="Triglicerides">Triglicerides</label></br>
-			
-			<input name="nameex" id="nameex" type="checkbox"></input>
-			<label for="nameex">nameex</label></br>
-			
 		    </div>
 	            
 		    <div class="col-sm-4">
@@ -295,6 +293,7 @@
 			<input name="Plaquetas" id="Plaquetas" type="checkbox"></input><label for="Plaquetas"> Plaquetas</label></br>
 			<input name="Reticuloticos " id="Reticuloticos " type="checkbox"></input><label for="Reticuloticos "> Reticulóticos </label></br>
 			<input name="VHS" id="VHS" type="checkbox"></input><label for="VHS">VHS</label></br>
+                        <input name="Tipagem_sanguinea" id="Tipagem_sanguinea" type="checkbox"></input><label for="Tipagem_sanguinea">Tipagem Sanguinea<//label></br>
 			<input name="Celulas_LE" id="Celulas_LE" type="checkbox"></input><label for="Celulas_LE"> Células LE</label></br>
 			<input name="Falcizaçao_Hemacias" id="Falcizaçao_Hemacias" type="checkbox"></input><label for="Falcizaçao_Hemacias">Falcização de Hemácias</label></br>
 	                
@@ -303,7 +302,7 @@
 			<input name="Tempo_Protrombina" id="Tempo_Protrombina" type="checkbox"></input><label for="Tempo_Protrombina">Tempo de Protrombina</label></br>
 			<input name="Tempo_Tromboplastina_Ativado" id="Tempo_Tromboplastina_Ativado" type="checkbox"></input><label for="Tempo_Tromboplastina_Ativado">Tempo de Tromboplastina Ativado</label></br>
 			<input name="Tempo_Trombina" id="Tempo_Trombina" type="checkbox"></input><label for="Tempo_Trombina">Tempo de Trombina</label></br>
-			<input name="Dimero_d" id="Dimero_d" type="checkbox"></div></input><label for="Dimero_d">Dímero-d</label></br>
+			<input name="Dimero_d" id="Dimero_d" type="checkbox"></input><label for="Dimero_d">Dímero-d</label></br>
 	                
 			<h4>Bioquimica Clinica/ Cultura : Material URINA amostra isolada/24 horas</h4>
 			<input name="Clerance_Creatinina" id="Clerance_Creatinina" type="checkbox"></input><label for="Clerance_Creatinina"> Clerance Creatinina</label></br>
@@ -320,10 +319,6 @@
 		    </div>
                     
 	        </div>
-		
-	        <div class = "row">
-		    <input id = "btn_Save" type = "submit" Value ="Salvar"></input>		
-	        </div> 
 	    </form>
 	    
         </div>

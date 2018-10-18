@@ -15,7 +15,7 @@ exports.sqlCreateTblExamesTable = "CREATE TABLE IF NOT EXISTS tbl_exames"+
 	   
     "CPK INTEGER ,"+
     "DHL INTEGER ,"+
-    "Fosfatase_acida_fra��o_prostatica INTEGER ,"+
+    "Fosfatase_acida_fracao_prostatica INTEGER ,"+
     "Fosfatase_acida_total INTEGER ,"+
 	   
     "Amilase INTEGER ,"+
@@ -34,7 +34,15 @@ exports.sqlCreateTblExamesTable = "CREATE TABLE IF NOT EXISTS tbl_exames"+
     "VLDL_Colesterol INTEGER ,"+
     "LDL_Colesterol INTEGER ,"+
     "Triglicerides INTEGER ,"+
-	   
+
+    "acido_Valproico INTEGER,"+
+    "Benzodiazepinicos INTEGER,"+
+    "Carbamazepina INTEGER,"+
+    "Fenobarbital INTEGER,"+
+    "Barbituricos INTEGER,"+
+    "Digoxina INTEGER,"+
+    "Fenitoina INTEGER,"+
+
     "Acido_Urico INTEGER ,"+
     "Ferritina INTEGER ,"+
     "Ferro INTEGER ,"+
@@ -103,7 +111,7 @@ exports.sqlCreateTblExamesTable = "CREATE TABLE IF NOT EXISTS tbl_exames"+
     "Aldosterona INTEGER ,"+
     "Aldolase INTEGER ,"+
     "Insulina INTEGER ,"+
-    "Pept�deo_c INTEGER ,"+
+    "Peptideo_c INTEGER ,"+
 	   
     "Coprocultura INTEGER ,"+
     "Cultura_de_BK INTEGER ,"+
