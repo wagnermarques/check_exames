@@ -14,12 +14,7 @@
             <h3>Exames de Rotina - Realizados em Laboratório Referenciado</h3>
             <h5>Bioquimica Clinica - Material de Sangue</h5> 
         </div>
-
-
         <div class="container" >
-
-
-
             <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
                 <button id="salvar" type="submit" aria-expanded="false" aria-label="Toggle navigation">SALVAR2</button>
                 <script>
@@ -31,8 +26,52 @@
             </nav>
             
 	    <form id="form-exames" action="/exames_form" method="post" enctype="application/x-www-form-urlencoded">
-                <label for="nome">Nome:</label>
-                <input name="nome" id="nome" type="text" style="width:100%"></input>
+				
+			<div class="form-horizontal">
+<div class="form-group">
+					<label for="nome">Nome:</label>
+					<input name="nome" id="nome" type="text" style="width:100%" class="form-control"></input>
+				</div>
+				
+				<div class="form-group ">
+					<label>Sexo:</label>
+					<div class="form-check-inline">
+						<label class="form-check-label">
+	    					<input type="radio" class="form-check-input" name="optradio">Masculino
+	  					</label>
+					</div>
+					<div class="form-check-inline">
+	  					<label class="form-check-label">
+	    					<input type="radio" class="form-check-input" name="optradio" >Feminino
+	  					</label>
+					</div>
+				</div>
+				
+				<div class="form-group ">
+					<label for="setor">Setor:</label>
+					<input name="setor" id="setor" type="text" style="width:100%" class="form-control"></input>
+				</div>
+				
+				<div class="form-group ">
+					<label for="prontuario">Prontuário:</label>
+					<input name="prontuario" id="prontuario" type="text" style="width:100%" class="form-control"></input>
+				</div>
+				
+				<div class="form-group ">
+					<label for="leito">Leito:</label>
+					<input name="leito" id="leito" type="text" style="width:100%" class="form-control"></input>
+				</div>
+				
+				<div class="form-group ">
+					<label for="idade">Idade:</label>
+					<input name="idade" id="idade" type="text" style="width:100%" class="form-control"></input>
+				</div>
+				
+				<div class="form-group ">
+					<label for="data">Data:</label>
+					<input type="date" name="data" class="form-control">	
+			</div>
+			</div>
 	        <div class="row">                    
 		    <div class="col-sm-4">
 		        
