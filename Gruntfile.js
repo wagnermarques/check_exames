@@ -1,6 +1,6 @@
 module.exports = function(grunt) {
 
-    // Project configuration.
+    //Project configuration.
     //https://gruntjs.com/configuring-tasks
     //https://gruntjs.com/getting-started
     grunt.initConfig({
@@ -11,7 +11,7 @@ module.exports = function(grunt) {
             },
             dist: {
                 src: ['src/public/**/*.js'],
-                dest: 'src/public/dist/<%= pkg.name %>.js'
+                dest: 'dist/<%= pkg.name %>.js'
             }
         },
         uglify: {
@@ -20,7 +20,7 @@ module.exports = function(grunt) {
             },
             dist: {
                 files: {
-                    'src/public/dist/<%= pkg.name %>.min.js': ['<%= concat.dist.dest %>']
+                    'dist/<%= pkg.name %>.min.js': ['<%= concat.dist.dest %>']
                 }
             }
         },
@@ -41,6 +41,14 @@ module.exports = function(grunt) {
 		}
 	    }
         },
+        copy: {
+            main: {
+                files: [
+                    // includes files within path
+                    {expand: true, src: ['dist/*min*.js'], dest: 'src/public/', filter: 'isFile'},
+                ],
+            },
+        },
         jshint: {
             files: ['Gruntfile.js', 'src/**/*.js', 'test/**/*.js'],
             options: {
@@ -58,9 +66,7 @@ module.exports = function(grunt) {
         }
     });
 
-
     
-
     // Load the plugin that provides the "uglify" task.
     //https://davidburgos.blog/how-to-fix-grunt-contrib-uglify-for-es6/
     //grunt.loadNpmTasks('grunt-contrib-uglify');
@@ -69,9 +75,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-concat');
-    
-    
-    
+    grunt.loadNpmTasks('grunt-contrib-copy');    
+        
     // Default task(s).
     grunt.registerTask('BuildMessage', 'Building project...', function() {
         grunt.log.write('This is just a Build Message from BuildMessage task...').ok();
@@ -86,6 +91,5 @@ module.exports = function(grunt) {
     // Register a task for webdriver tests
     grunt.registerTask('test:browser', ['intern:browser']);
     
-    grunt.registerTask('default', ['test','concat','uglify','BuildMessage']);
-    
+    grunt.registerTask('default', ['test','concat','uglify','copy', 'BuildMessage']);    
 }

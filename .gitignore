@@ -6,4 +6,5 @@ node_modules/
 */**/*.min.js
 *.db
 */**/*min*.js
+dist/
 
