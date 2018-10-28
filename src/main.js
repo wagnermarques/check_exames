@@ -15,7 +15,7 @@ webapp.get('/select_all_exames', function(req, res){
     let sqlAll = "SELECT * FROM tbl_exames";
     persistence.select(sqlAll).then(
         (rows)=>{
-        res.json(rows);
+            res.json(rows);
         },
         (err)=>{
             res.send(err);
@@ -23,9 +23,5 @@ webapp.get('/select_all_exames', function(req, res){
     );
 });
 
-
-
 console.log("end of main reachead...");
-//debugger
-//console.log(db);
-//db.config_database();
+

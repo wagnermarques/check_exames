@@ -16,7 +16,7 @@ const middlewares = [
 appExpress.use(middlewares);
 
 appExpress.get('/', function(req, res){
-    res.sendFile(__dirname + '/formulario.html');
+    res.sendFile(__dirname + '/index.html');
 });
 
 appExpress.get('/view_listar', function(req, res){
