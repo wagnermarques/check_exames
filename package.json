@@ -4,7 +4,8 @@
   "description": "Um simples formulario com checklist de exames com nodejs express e sqlite",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+      "test": "grunt intern:node",
+      "start":"node src/main.js"
   },
   "repository": {
     "type": "git",
@@ -19,8 +20,11 @@
   "devDependencies": {
     "grunt": "^1.0.3",
     "grunt-cli": "^1.3.1",
+    "grunt-contrib-concat": "^1.0.1",
     "grunt-contrib-jshint": "^1.1.0",
     "grunt-contrib-uglify": "^3.4.0",
+    "grunt-contrib-uglify-es": "github:gruntjs/grunt-contrib-uglify#harmony",
+    "grunt-contrib-watch": "^1.1.0",
     "grunt-webpack": "^3.1.2",
     "intern": "^4.3.1",
     "webpack": "^4.17.1"
@@ -28,7 +32,7 @@
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
-    "grunt-contrib-uglify-es": "github:gruntjs/grunt-contrib-uglify#harmony",
+    "node-gyp": "^3.8.0",
     "object-inspect": "^1.6.0",
     "phantomjs": "^2.1.7",
     "sqlite3": "^4.0.2"
