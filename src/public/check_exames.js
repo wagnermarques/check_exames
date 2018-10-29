@@ -2,7 +2,7 @@
 //let colModel = [];
 $( document ).ready(function() {
     $.ajax({
-        url:"http://localhost:3000/select_all_exames",                 
+        url:"/select_all_exames",                 
         success: function(result){
             result.forEach((item)=>{
                 Object.keys(item).forEach((key)=>{
