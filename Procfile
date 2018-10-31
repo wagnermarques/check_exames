@@ -1,1 +1,1 @@
-web: node src/main.js
+web: grunt concat; grunt uglify; grunt copy; node src/main.js

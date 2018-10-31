@@ -1,6 +1,6 @@
 $( document ).ready(function() {
     $.ajax({
-        url:"http://localhost:3000/select_all_exames",                 
+        url:"https://checkexames.herokuapp.com/select_all_exames",                 
         success: function(result){
             result.forEach((item)=>{
                 document.getElementById("report-div").innerHTML += "<h2>"+item.nome+"</h2>";
