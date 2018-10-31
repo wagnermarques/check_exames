@@ -1,5 +1,5 @@
-let cols = [];
-let colModel = [];
+//let cols = [];
+//let colModel = [];
 $( document ).ready(function() {
     $.ajax({
         url:"https://checkexames.herokuapp.com/select_all_exames",                 
