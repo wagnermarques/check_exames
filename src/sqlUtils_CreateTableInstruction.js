@@ -2,7 +2,14 @@ exports.sqlCreateTblExamesTable = "CREATE TABLE IF NOT EXISTS tbl_exames"+
     "("+
     "id integer PRIMARY KEY AUTOINCREMENT, "+
     "nome varchar(100),"+
-	   
+    //TODO: esses compos precisam validação semelhante ao campo do nome
+    "sexo char(1)," + // TODO: esse campo deve retornar apenas um caractere indicando o sexo do paciente
+    "setor varchar(50),"+
+    "prontuario varchar(50),"+
+    "leito varchar(100),"+
+    "idade int(3),"+
+    "data varchar(10)," + //deve retornar a data
+
     "eletroforese_de_hemoglobina INTEGER ,"+
     "eletroforese_de_proteina INTEGER ,"+
 	   
@@ -21,6 +28,7 @@ exports.sqlCreateTblExamesTable = "CREATE TABLE IF NOT EXISTS tbl_exames"+
     "Amilase INTEGER ,"+
     "Lipase INTEGER ,"+
     "Fosfase_Alcalina INTEGER ,"+
+    
     "Gama_GT INTEGER ,"+
     "TGO_AST INTEGER ,"+
     "TGP_ALT INTEGER ,"+

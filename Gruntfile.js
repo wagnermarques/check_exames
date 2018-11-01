@@ -24,23 +24,6 @@ module.exports = function(grunt) {
                 }
             }
         },
-        intern: {
-	    options: {
-                //WARNING: excludeInstrumentation is deprecated, use coverage instead.
-		//excludeInstrumentation: true,
-		//require: 'app/Block.js',
-		suites: [ 'tests/unit/*.js', 'tests/integration/*.js' ],
-		reporters: [ 'runner' ]
-	    },
-	    node: {
-		options: {}
-	    },
-	    browser: {
-		options: {
-		    environments: 'chrome'
-		}
-	    }
-        },
         copy: {
             main: {
                 files: [
@@ -59,6 +42,23 @@ module.exports = function(grunt) {
                     document: true
                 }
             }
+        },
+        intern: {
+	    options: {
+                //WARNING: excludeInstrumentation is deprecated, use coverage instead.
+		//excludeInstrumentation: true,
+		//require: 'app/Block.js',
+		suites: [ 'tests/unit/*.js', 'tests/integration/*.js' ],
+		reporters: [ 'runner' ]
+	    },
+	    node: {
+		options: {}
+	    },
+	    browser: {
+		options: {
+		    environments: 'chrome'
+		}
+	    }
         },
         watch: {
             files: ['<%= jshint.files %>'],
