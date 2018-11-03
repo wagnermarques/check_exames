@@ -1,3 +1,6 @@
+let urlHost;
+console.log(window.location.hostname);
+console.log(window);
 $( document ).ready(function() {
     $.ajax({
         url:"https://checkexames.herokuapp.com/select_all_exames",                 

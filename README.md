@@ -10,4 +10,11 @@ sqlite
 
 warn: the tests are not still good. Do not use this app yet.
 
+# banco de dados
+
+## Describe table
+sqlite> pragma table_info([tbl_exames]);
+
+## Exit database
+sqlite> .exit
 

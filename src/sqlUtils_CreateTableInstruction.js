@@ -155,5 +155,9 @@ exports.sqlCreateTblExamesTable = "CREATE TABLE IF NOT EXISTS tbl_exames"+
     "Microalbuminuria INTEGER ,"+
     "Urina_I INTEGER ,"+
     "Urocultura INTEGER ,"+
-    "Antibiograma INTEGER "+	   	   
+    "Antibiograma INTEGER, "+
+    "fosfatase_acida_total_e_fracao_prostatica INTEGER," +
+    "Calcio_Bioquimica INTEGER,"+
+    "Sodio_Bioquimica INTEGER,"+
+    "Acido_Urico_Bioquimica INTEGER"+
     ")";

@@ -32,6 +32,14 @@ module.exports = function(grunt) {
                 ],
             },
         },
+        clean: {
+            dist: ['dist/**'],
+            "src/public/dist": ['src/public/dist/**']
+            //contents: ['path/to/dir/*']
+            //subfolders: ['path/to/dir/*/'],
+            //css: ['path/to/dir/*.css'],
+            //all_css: ['path/to/dir/**/*.css']
+        },
         jshint: {
             files: ['Gruntfile.js', 'src/**/*.js', 'test/**/*.js'],
             options: {
@@ -76,10 +84,11 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-copy');    
-        
+    grunt.loadNpmTasks('grunt-contrib-clean');
+    
     // Default task(s).
     grunt.registerTask('BuildMessage', 'Building project...', function() {
-        grunt.log.write('This is just a Build Message from BuildMessage task...').ok();
+        grunt.log.write('Build sucessfully...').ok();
     });
 
     // Loading using a local git copy
@@ -91,5 +100,5 @@ module.exports = function(grunt) {
     // Register a task for webdriver tests
     grunt.registerTask('test:browser', ['intern:browser']);
     
-    grunt.registerTask('default', ['test','concat','uglify','copy', 'BuildMessage']);    
+    grunt.registerTask('default', ['clean','concat','uglify','copy', 'BuildMessage']);    
 }

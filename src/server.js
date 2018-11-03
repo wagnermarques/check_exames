@@ -19,6 +19,10 @@ appExpress.get('/', function(req, res){
     res.sendFile(__dirname + '/views/index.html');
 });
 
+appExpress.get('/index2', function(req, res){
+    res.sendFile(__dirname + '/views/index2.html');
+});
+
 appExpress.get('/view_listar', function(req, res){
     res.sendFile(__dirname + '/views/listar.html');
 });
