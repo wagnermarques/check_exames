@@ -33,7 +33,7 @@ module.exports = function(grunt) {
             },
         },
         clean: {
-            dist: ['dist/**'],
+            dist: ['dist/**']
             "src/public/dist": ['src/public/dist/**']
             //contents: ['path/to/dir/*']
             //subfolders: ['path/to/dir/*/'],
@@ -66,22 +66,7 @@ module.exports = function(grunt) {
 	    },
 	    node: {
 		options: {}
-	    },
-            browser: {
-                "loader": {
-                    "script": "systemjs"
-                },
-                "plugins": {
-                    "script": "_dist/src/system.config.js",
-                    "useLoader": true
-                }
-            }
-
-	    //browser: {
-	//	options: {
-	//	    environments: 'chrome'
-	//	}
-	//    }
+	    }
         },
         watch: {
             files: ['<%= jshint.files %>'],
