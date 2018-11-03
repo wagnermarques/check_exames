@@ -36,10 +36,29 @@ exports.sqlUtils = {
             }else{
                 //enquando nao he a ultima coluna, colocamos virgula pra concatenar
                 //nome das colunas e values
-                sqlInsert +=column + " , ";
-                if(key == "nome"){
+
+                //ESCREVE NOME DAS COLUNAS NA QUERY
+                //no caso do sexo ajusta o hash trocando sexo_masc, sexo_fem para so sexo com
+                //seu respectivo valor masculino ou feminino
+                if( key == "sexo_masc" ){
+                    sqlInsert +=" sexo , ";
+                }else if(key == "sexo_fem"){
+                    sqlInsert +=" sexo , ";
+                }else {
+                    sqlInsert +=column + " , ";
+                }
+
+                
+
+
+                //ESCREVE VALUES PARA AS COLUNAS
+                if(key == "nome" || key == "setor" ||  key == "prontuario" ||  key == "leito" || key == "idade" || key == "data" ){
                     values += "'"+obj[key]+"'"+" , ";
-                } else {
+                }else if (key == "sexo_masc"){
+                    values += "'masculino'"+" , ";
+                }else if(key == "sexo_fem"){
+                    values += "'feminino'"+" , ";
+                }else {
                     values +=colValue + " , ";
                 }
             }
