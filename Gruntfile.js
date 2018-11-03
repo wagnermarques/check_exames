@@ -51,6 +51,11 @@ module.exports = function(grunt) {
                 }
             }
         },
+        ts: {
+            default : {
+                src: ["**/*.ts", "!node_modules/**/*.ts"]
+            }
+        },
         intern: {
 	    options: {
                 //WARNING: excludeInstrumentation is deprecated, use coverage instead.
@@ -62,11 +67,21 @@ module.exports = function(grunt) {
 	    node: {
 		options: {}
 	    },
-	    browser: {
-		options: {
-		    environments: 'chrome'
-		}
-	    }
+            browser: {
+                "loader": {
+                    "script": "systemjs"
+                },
+                "plugins": {
+                    "script": "_dist/src/system.config.js",
+                    "useLoader": true
+                }
+            }
+
+	    //browser: {
+	//	options: {
+	//	    environments: 'chrome'
+	//	}
+	//    }
         },
         watch: {
             files: ['<%= jshint.files %>'],
@@ -85,6 +100,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-copy');    
     grunt.loadNpmTasks('grunt-contrib-clean');
+    grunt.loadNpmTasks("grunt-ts");
     
     // Default task(s).
     grunt.registerTask('BuildMessage', 'Building project...', function() {

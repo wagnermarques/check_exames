@@ -4,8 +4,8 @@
   "description": "Um simples formulario com checklist de exames com nodejs express e sqlite",
   "main": "index.js",
   "scripts": {
-      "test": "grunt intern:node",
-      "start": "src/main.js"
+    "test": "node ./node_modules/intern/bin/intern.js",
+    "start": "src/main.js"
   },
   "repository": {
     "type": "git",
@@ -34,9 +34,11 @@
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
+    "grunt-ts": "^6.0.0-beta.21",
     "node-gyp": "^3.8.0",
     "object-inspect": "^1.6.0",
     "phantomjs": "^2.1.7",
-    "sqlite3": "^4.0.2"
+    "sqlite3": "^4.0.2",
+    "typescript": "^3.1.6"
   }
 }
