@@ -3,15 +3,15 @@
 // node ./node_modules/intern/bin/intern.js
 //when use grunt test (see Gruntfile) this file is not required
 {
-    "browser": {
-        "loader": {
-            "script": "systemjs"
-        },
-        "plugins": {
-            "script": "_dist/src/system.config.js",
-            "useLoader": true
-        }
-    },
+//    "browser": {
+//        "loader": {
+//            "script": "systemjs"
+//        },
+//        "plugins": {
+//            "script": "_dist/src/system.config.js",
+//            "useLoader": true
+//        }
+//    },
     
     "suites": [
         "tests/unit/**/*.js",
