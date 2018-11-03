@@ -1,9 +1,15 @@
-let urlHost;
-console.log(window.location.hostname);
-console.log(window);
+
+var urlHostname="";
+
+if (window.location.hostname == "checkexames.herokuapp.com"){
+    urlHostname = "https://checkexames.herokuapp.com";
+}else{
+    urlHostname = "http://localhost:5000"
+}
+
 $( document ).ready(function() {
     $.ajax({
-        url:"https://checkexames.herokuapp.com/select_all_exames",                 
+        url:urlHostname+"/select_all_exames",                 
         success: function(result){
             result.forEach((item)=>{
                 document.getElementById("report-div").innerHTML += "<h2>"+item.nome+"</h2>";
