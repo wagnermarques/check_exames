@@ -1,7 +1,5 @@
 exports.sqlUtils = {
 
-    
-    
     writeInsertSql_FromObjectWithBooleanAttributes_Using01Values : function(obj,tableName){
         //this function generate sql insert instruction from object
         //but its for object with boolean attributes only

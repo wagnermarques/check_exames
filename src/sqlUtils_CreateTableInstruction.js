@@ -161,3 +161,8 @@ exports.sqlCreateTblExamesTable = "CREATE TABLE IF NOT EXISTS tbl_exames"+
     "Sodio_Bioquimica INTEGER,"+
     "Acido_Urico_Bioquimica INTEGER"+
     ")";
+
+exports.sqlCreateTblUsers = "CREATE TABLE IF NOT EXISTS tbl_users ("+
+    "id INTEGER PRIMARY KEY AUTOINCREMENT, "+
+    "login varchar(20), "+
+    "senha varchar(20))";

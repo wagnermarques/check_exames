@@ -1,6 +1,8 @@
 var webapp = require("./server.js").webapp;;
 var persistence = require("./persist_in_sqlite.js").persistence;
 
+//cria banco de dados
+//caso o banco ja exista, nao faz nada
 persistence.createDatabase();
 
 webapp.post('/exames_form', function(req, res){

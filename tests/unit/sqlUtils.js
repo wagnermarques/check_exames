@@ -5,7 +5,7 @@ const { registerSuite } = intern.getPlugin('interface.object');
 
 registerSuite('SqlUtils.js', {
 
-    'write sql insert statement from object instance with only boolean fields'() {
+    'test sql writter for a insert statement from js object  with only boolean fields'() {
 
         //sqlUtils writeInsertSqlFromObject(obj,tableName) retorna uma sql de insert para um objeto
         //ela deve retornar 1 quando o valor nao for null, undefined ou "" isso porque o sqlite usa 1 pra true e 0 pra false        

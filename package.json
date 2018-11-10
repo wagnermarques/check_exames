@@ -4,7 +4,7 @@
   "description": "Um simples formulario com checklist de exames com nodejs express e sqlite",
     "main": "index.js",
     "scripts": {
-        "test": "",
+        "test": "node_modules/intern/bin/intern.js",
         "start": "src/main.js"
     },
   "repository": {

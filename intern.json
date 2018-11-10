@@ -18,6 +18,7 @@
         "tests/integration/**/*.js"
     ],
     
-    "environments": ["node", { "browserName": "chrome" }]
+    //"environments": ["node", { "browserName": "chrome" }]
+    "environments": ["node"]
     
 }
