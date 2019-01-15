@@ -1,26 +1,41 @@
 module.exports = function(grunt) {
-
     //Project configuration.
     //https://gruntjs.com/configuring-tasks
     //https://gruntjs.com/getting-started
+    //require('load-grunt-tasks')(grunt);
+
     grunt.initConfig({
-        pkg: grunt.file.readJSON('package.json'),
+        pkg: grunt.file.readJSON('package.json'),                
+        run: {
+            eslint: {
+                cmd: './node_modules/.bin/eslint',
+                args: [
+                    ' *.js '
+                ]
+            },
+            jslint : {
+                cmd: './node_module/.bin/jslint',
+                args:[
+                    'src/main.js'
+                ]
+            }
+        },
         concat: {
             options: {
                 separator: ';'
             },
-            dist: {
-                src: ['src/public/**/*.js'],
-                dest: 'dist/<%= pkg.name %>.js'
+            src_client_sources: {
+                src: ['src/client/**/*.js'],
+                dest: 'client_dist/<%= pkg.name %>.js'
             }
         },
         uglify: {
             options: {
                 banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n'
             },
-            dist: {
+            src_client_sources: {
                 files: {
-                    'dist/<%= pkg.name %>.min.js': ['<%= concat.dist.dest %>']
+                    'client_dist/<%= pkg.name %>.min.js': ['<%= concat.src_client_sources.dest %>']
                 }
             }
         },
@@ -28,28 +43,20 @@ module.exports = function(grunt) {
             main: {
                 files: [
                     // includes files within path
-                    {expand: true, src: ['dist/*min*.js'], dest: 'src/public/', filter: 'isFile'},
+                    {expand: true,
+                     src: ['client_dist/*min*.js'],
+                     dest: 'client_public',
+                     filter: 'isFile'},
                 ],
             },
         },
         clean: {
-            dist: ['dist/**']
-            "src/public/dist": ['src/public/dist/**']
+            client_dist: ['client_dist/**'],
+            client_public: ['client_public']
             //contents: ['path/to/dir/*']
             //subfolders: ['path/to/dir/*/'],
             //css: ['path/to/dir/*.css'],
             //all_css: ['path/to/dir/**/*.css']
-        },
-        jshint: {
-            files: ['Gruntfile.js', 'src/**/*.js', 'test/**/*.js'],
-            options: {
-                // options here to override JSHint defaults
-                globals: {
-                    console: true,
-                    module: true,
-                    document: true
-                }
-            }
         },
         ts: {
             default : {
@@ -80,14 +87,28 @@ module.exports = function(grunt) {
     //grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-uglify-es');
 
-    grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-jslint');
+
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-copy');    
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks("grunt-ts");
     
-    // Default task(s).
+
+    // registering tasks
+    grunt.registerTask('jslint', [
+         'run:jslint']);
+    grunt.registerTask('eslint', [
+        'run:eslint'
+    ]);
+
+    //eslink as a grunt taks was a problem for me
+    //lets running it as grunt run:eslint
+    //grunt.registerTask('eslint', 'Run EsLint', ['eslint']);
+    grunt.loadNpmTasks('grunt-run');
+    
+    
     grunt.registerTask('BuildMessage', 'Building project...', function() {
         grunt.log.write('Build sucessfully...').ok();
     });
@@ -101,5 +122,5 @@ module.exports = function(grunt) {
     // Register a task for webdriver tests
     grunt.registerTask('test:browser', ['intern:browser']);
     
-    grunt.registerTask('default', ['clean','concat','uglify','copy', 'BuildMessage']);    
+    grunt.registerTask('default', ['clean','concat','uglify','copy', 'BuildMessage' ]);    
 }

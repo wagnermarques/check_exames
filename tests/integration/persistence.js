@@ -1,17 +1,16 @@
+var pesistenceSupport = require("../support/persistence_support.js").persistenceTestSupport;
 var persistence = require("../../src/persist_in_sqlite.js").persistence;
 
 //This sql statements is needed for persistence.createDatabase function
 var sqlCreateTblExamesTable = require("../../src/sqlUtils_CreateTableInstruction.js").sqlCreateTblExamesTable;
-//var sqlCreateTblUsers = require("./sqlUtils_CreateTableInstruction.js").sqlCreateTblUsers;
+var sqlCreateTblUsers = require("../../src/sqlUtils_CreateTableInstruction.js").sqlCreateTblUsers;
 
-
-const sqlite3 = require('sqlite3').verbose();
 
 const { assert } = intern.getPlugin('chai');
 const { registerSuite } = intern.getPlugin('interface.object');
 
 
-registerSuite('Persistence.js',()=>{
+registerSuite('Test Persistence ',()=>{
 
     let db4EachTestCase = null;  //each test must run in a brand new memory database
     
@@ -20,11 +19,12 @@ registerSuite('Persistence.js',()=>{
         beforeEach() {
             console.log("###[tests/integration/persistence.js] beforeEach() {...");
             //each test will run in a brand new memory database
-            db4EachTestCase = new sqlite3.Database(":memory:", (err) => {
-                if (err) {
-                    return console.error(err.message);
-                }
-            });            
+            //db4EachTestCase = new sqlite3.Database(":memory:", (err) => {
+            //    if (err) {
+            //        return console.error(err.message);
+            //    }
+            //});
+            db4EachTestCase = pesistenceSupport.createDatabase();
         },
         
         afterEach() {

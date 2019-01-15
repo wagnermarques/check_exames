@@ -1,3 +1,4 @@
+console.log("main.js");
 exports.sqlUtils = {
 
     writeInsertSql_FromObjectWithBooleanAttributes_Using01Values : function(obj,tableName){
@@ -62,6 +63,7 @@ exports.sqlUtils = {
             }
             i++
         });
+        console.log(sqlInsert+values);
         return sqlInsert + values; 
     }
 }

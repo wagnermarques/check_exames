@@ -10,29 +10,29 @@
 
     <body>
         <div class="container-fluid" style="margin-top:80px">
-            <nav class="navbar navbar-light bg-light fixed-top">
+            <nav id="nav" class="navbar navbar-light bg-light fixed-top">
                 <div class="btn-group">
-                        <button class="btn btn-success" id="salvar" type="submit" aria-expanded="false" aria-label="Toggle navigation">
-                            <i class="fa fa-plus" aria-hidden="true"></i> Salvar
-                        </button>
-                        <script>
-                            document.getElementById("salvar").onclick = function() {
-                                document.getElementById("form-exames").submit();
-                            }
-                        </script>
-                        <button  class="btn btn-primary" aria-expanded="false" aria-label="Toggle navigation" onclick="window.location='/view_listar'">
-                            <i class="fa fa-address-card" aria-hidden="true"></i> Listar
-                        </button>
-                        <br></br>
-                        Login:
-                        <input id="txt_login" type="text"></input>
-                        <br></br>
-                        Senha:
-                        <input id="txt_senha" type="text"></input>
-                        <button  class="btn btn-primary" aria-expanded="false" aria-label="Toggle navigation" onclick="window.location='/view_listar'">
-                            <i class="fa fa-address-card" aria-hidden="true"></i> OK
-                        </button>
-
+                    <button class="btn btn-success" id="salvar" type="submit" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fa fa-plus" aria-hidden="true"></i> Salvar
+                    </button>
+                    <script>
+                     document.getElementById("salvar").onclick = function() {
+                         document.getElementById("form-exames").submit();
+                     }
+                    </script>
+                    <button  class="btn btn-primary" aria-expanded="false" aria-label="Toggle navigation" onclick="window.location='/view_listar'">
+                        <i class="fa fa-address-card" aria-hidden="true"></i> Listar
+                    </button>
+                </div>
+                <div id="login-div" class="form-inline">
+                    <label class="col-form-label" for="login">Login:</label>
+                    <input name="login" id="login" type="text" class="form-control" style="margin-left: 5px;"></input>
+                    <label class="col-form-label" for="senha">Senha:</label>
+                    <input name="senha" id="senha" type="senha" class="form-control" style="margin-left: 5px;"></input>
+                    <button id="btnLogin" class="btn btn-primary" aria-expanded="false" aria-label="Toggle navigation">
+                        <i  class="fa fa-address-card" aria-hidden="true"></i> Login
+                    </button>
+                    
                 </div>
             </nav>
                     
@@ -50,7 +50,7 @@
                 </div>
             </div>
             
-            <form id="form-exames" action="/exames_form" method="post" enctype="application/x-www-form-urlencoded">
+            <form id="form-exames" action="/process_exames_form" method="post" enctype="application/x-www-form-urlencoded">
                 <div id="paciente">
                     <div class="form-inline justify-content-center" style="margin-bottom: 10px">
                         <div class="form-group">
