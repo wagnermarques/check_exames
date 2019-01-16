@@ -1,5 +1,5 @@
-var persistence = require("../../src/persist_in_sqlite.js").persistence;
-var loginService = require("../../src/services/loginService.js").loginService;
+var persistence = require("../../src/server/persist_in_sqlite.js").persistence;
+var loginService = require("../../src/server/services/loginService.js").loginService;
 var persistenceTestSupport = require("../support/persistence_support.js").persistenceTestSupport;
 
 const { assert } = intern.getPlugin('chai');
@@ -11,8 +11,8 @@ registerSuite('loginService.js',()=>{
 
         beforeEach() {
             //loginServicex            
-            let db4Test = persistenceTestSupport.createDatabase();
-            persistence.setDb(db4Test);
+//            let db4Test = persistenceTestSupport.createDatabase();
+//            persistence.setDb(db4Test);
         },
         
         afterEach() {
@@ -30,10 +30,11 @@ registerSuite('loginService.js',()=>{
         },
 
         tests: {        
-            'test login with valid admin credentials'() {                
-                let loggedUser = loginService.login("admin","admin123");
-                assert
-            }
+//            'test login with valid admin credentials'() {
+//                console.log("--------------------------------------------------------------------------------------------");
+//                let loggedUser = loginService.login("admin","admin123");
+//                assert
+//            }
         }//tests: {
     }//return {
 });

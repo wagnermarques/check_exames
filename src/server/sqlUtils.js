@@ -1,4 +1,3 @@
-console.log("main.js");
 exports.sqlUtils = {
 
     writeInsertSql_FromObjectWithBooleanAttributes_Using01Values : function(obj,tableName){
@@ -48,8 +47,6 @@ exports.sqlUtils = {
                 }
 
                 
-
-
                 //ESCREVE VALUES PARA AS COLUNAS
                 if(key == "nome" || key == "setor" ||  key == "prontuario" ||  key == "leito" || key == "idade" || key == "data" ){
                     values += "'"+obj[key]+"'"+" , ";
@@ -63,7 +60,7 @@ exports.sqlUtils = {
             }
             i++
         });
-        console.log(sqlInsert+values);
+        console.log("###[sqlUtils.js]> "+sqlInsert+values);
         return sqlInsert + values; 
     }
 }

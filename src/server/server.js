@@ -26,12 +26,8 @@ delete(appExpress.cache);
 
 //https://stackoverflow.com/questions/15693192/heroku-node-js-error-web-process-failed-to-bind-to-port-within-60-seconds-of
 //Heroku dynamically assigns your app a port, so you can't set the port to a fixed number. Heroku adds the port to the env
-//console.log(process.env.PORT);
-//http.listen(process.env.PORT || 5000, function(){
-//    let port= process.env.PORT || 5000;
-//});
-http.listen(5000, function(){
-    //let port= 5000;
+http.listen( process.env.PORT || 5000, function() {
+    let port= process.env.PORT || 5000;
 });
 
 exports.webapp = appExpress;

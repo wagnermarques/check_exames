@@ -14,12 +14,11 @@
 //    },
     
     "suites": [
-//        "tests/unit/**/*.js",
-//        "tests/integration/**/*.js",
-        "tests/integration/loginService.js"
+        "tests/unit/**/*.js",
+        "tests/integration/**/*.js"
+//        "tests/integration/loginService.js"
     ],
     
     //"environments": ["node", { "browserName": "chrome" }]
-    "environments": ["node"]
-    
+    "environments": ["node"]    
 }

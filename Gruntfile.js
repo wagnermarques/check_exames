@@ -13,11 +13,19 @@ module.exports = function(grunt) {
                     ' *.js '
                 ]
             },
-            jslint : {
-                cmd: './node_module/.bin/jslint',
-                args:[
+            testWithIntern: {
+                cmd: './node_modules/.bin/intern'
+            },
+            jslint: {
+                cmd: './node_modules/.bin/jslint ',
+                args: [
                     'src/main.js'
                 ]
+            }
+        },
+        exec: {
+            run_eslint: {
+                cmd: './node_modules/.bin/eslint src/main.js'
             }
         },
         concat: {
@@ -97,6 +105,11 @@ module.exports = function(grunt) {
     
 
     // registering tasks
+    //Fix: integrate with grunt
+    // --nomen pra nao dar problema com _
+    // ./node_modules/.bin/jslint --nomen --edition=latest src/main.js
+    grunt.registerTask('testWithIntern', [
+        'run:testWithIntern']);    
     grunt.registerTask('jslint', [
          'run:jslint']);
     grunt.registerTask('eslint', [
@@ -107,7 +120,7 @@ module.exports = function(grunt) {
     //lets running it as grunt run:eslint
     //grunt.registerTask('eslint', 'Run EsLint', ['eslint']);
     grunt.loadNpmTasks('grunt-run');
-    
+    grunt.loadNpmTasks('grunt-exec');    
     
     grunt.registerTask('BuildMessage', 'Building project...', function() {
         grunt.log.write('Build sucessfully...').ok();
@@ -122,5 +135,5 @@ module.exports = function(grunt) {
     // Register a task for webdriver tests
     grunt.registerTask('test:browser', ['intern:browser']);
     
-    grunt.registerTask('default', ['clean','concat','uglify','copy', 'BuildMessage' ]);    
+    grunt.registerTask('default', ['eslint', 'clean', 'concat', 'uglify', 'copy', 'testWithIntern','BuildMessage' ]);    
 }

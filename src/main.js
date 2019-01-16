@@ -1,3 +1,4 @@
+/*jslint es6:true*/
 var path = require("path");
 var webapp = require("./server/server.js").webapp;
 var persistence = require("./server/persist_in_sqlite.js").persistence;

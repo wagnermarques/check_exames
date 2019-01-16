@@ -1,4 +1,4 @@
-var sqlUtils = require("../../src/sqlUtils.js").sqlUtils;
+var sqlUtils = require("../../src/server/sqlUtils.js").sqlUtils;
 
 const { assert } = intern.getPlugin('chai');
 const { registerSuite } = intern.getPlugin('interface.object');
@@ -6,7 +6,8 @@ const { registerSuite } = intern.getPlugin('interface.object');
 registerSuite('SqlUtils.js', {
 
     'test sql writter for a insert statement from js object  with only boolean fields'() {
-
+        console.log("--------------------------------------------------------------------------------------------");
+        console.log('###[test/unit/sqlUtils.js]> test sql writter for a insert statement from js object  with only boolean fields() {...');
         //sqlUtils writeInsertSqlFromObject(obj,tableName) retorna uma sql de insert para um objeto
         //ela deve retornar 1 quando o valor nao for null, undefined ou "" isso porque o sqlite usa 1 pra true e 0 pra false        
         var obj = {

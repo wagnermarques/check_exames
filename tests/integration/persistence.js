@@ -1,9 +1,9 @@
 var pesistenceSupport = require("../support/persistence_support.js").persistenceTestSupport;
-var persistence = require("../../src/persist_in_sqlite.js").persistence;
+var persistence = require("../../src/server/persist_in_sqlite.js").persistence;
 
 //This sql statements is needed for persistence.createDatabase function
-var sqlCreateTblExamesTable = require("../../src/sqlUtils_CreateTableInstruction.js").sqlCreateTblExamesTable;
-var sqlCreateTblUsers = require("../../src/sqlUtils_CreateTableInstruction.js").sqlCreateTblUsers;
+var sqlCreateTblExamesTable = require("../../src/server/sqlUtils_CreateTableInstruction.js").sqlCreateTblExamesTable;
+var sqlCreateTblUsers = require("../../src/server/sqlUtils_CreateTableInstruction.js").sqlCreateTblUsers;
 
 
 const { assert } = intern.getPlugin('chai');
@@ -19,11 +19,6 @@ registerSuite('Test Persistence ',()=>{
         beforeEach() {
             console.log("###[tests/integration/persistence.js] beforeEach() {...");
             //each test will run in a brand new memory database
-            //db4EachTestCase = new sqlite3.Database(":memory:", (err) => {
-            //    if (err) {
-            //        return console.error(err.message);
-            //    }
-            //});
             db4EachTestCase = pesistenceSupport.createDatabase();
         },
         
@@ -44,6 +39,7 @@ registerSuite('Test Persistence ',()=>{
         tests: {
             
             'persisting obj exame in tbl_exames'() {
+                console.log("--------------------------------------------------------------------------------------------");
                 console.log("###[tests/integration/persistence.js] tests: {... 'persisting obj exame in tbl_exames'() {..");
                 const dfd = this.async();
                 //this object will be persisted
@@ -54,9 +50,8 @@ registerSuite('Test Persistence ',()=>{
                     outroHormonio:"" //false too
                 }
 
-
                 db4EachTestCase.serialize(function() {
-                    console.log("###[tests/integration/persistence.js] db4EachTestCase.serialize(function() {...");
+                    console.log("[tests/integration/persistence.js] db4EachTestCase.serialize(function() {...");
                     db4EachTestCase.run(sqlCreateTblExamesTable);
 
                     //db4EachTestCase.run(sqlCreateTblUsers);
@@ -67,7 +62,7 @@ registerSuite('Test Persistence ',()=>{
                     
                     persistence.select("select * from tbl_exames").then(
                         dfd.callback((result,err)=>{
-                            console.log("###[tests/integration/persistence.js] persistence.select (result)=>{...");
+                            console.log("[tests/integration/persistence.js] persistence.select (result)=>{...");
                             //test if result[0] contains the key value perisisted
                             //using result[0] because there are just one record
                             //retuned as a array, so, get just the first is sufficient
@@ -76,11 +71,11 @@ registerSuite('Test Persistence ',()=>{
                         })
                     );
                 });//db4EachTestCase.serialize(function() {                    
-            },
-            
-            'testing select funcionality'(){
-                
             }
+            
+//            'testing select funcionality'(){
+//                console.log("--------------------------------------------------------------------------------------------");
+//            }
         },//tests: {    
     }//return {
 });//registerSuite('Persistence.js',()=>{

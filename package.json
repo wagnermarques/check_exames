@@ -28,6 +28,7 @@
     "grunt-contrib-uglify-es": "github:gruntjs/grunt-contrib-uglify#harmony",
     "grunt-contrib-watch": "^1.1.0",
     "grunt-eslint": "^21.0.0",
+    "grunt-exec": "^3.0.0",
     "grunt-jslint": "^1.1.15",
     "grunt-run": "^0.8.1",
     "grunt-webpack": "^3.1.2",
@@ -42,6 +43,7 @@
     "grunt-ts": "^6.0.0-beta.21",
     "node-gyp": "^3.8.0",
     "object-inspect": "^1.6.0",
+    "pg": "^7.8.0",
     "phantomjs": "^2.1.7",
     "sqlite3": "^4.0.2",
     "typescript": "^3.1.6"

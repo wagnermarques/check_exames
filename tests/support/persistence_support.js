@@ -1,5 +1,5 @@
-var sqlCreateTblExamesTable = require("../../src/sqlUtils_CreateTableInstruction.js").sqlCreateTblExamesTable;
-var sqlCreateTblUsers = require("../../src/sqlUtils_CreateTableInstruction.js").sqlCreateTblUsers;
+var sqlCreateTblExamesTable = require("../../src/server/sqlUtils_CreateTableInstruction.js").sqlCreateTblExamesTable;
+var sqlCreateTblUsers = require("../../src/server/sqlUtils_CreateTableInstruction.js").sqlCreateTblUsers;
 const sqlite3 = require('sqlite3').verbose();
 
 exports.persistenceTestSupport = {
