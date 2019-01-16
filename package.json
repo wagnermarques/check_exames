@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "node_modules/intern/bin/intern.js",
-    "start": "src/main.js"
+    "start": "node src/main.js"
   },
   "repository": {
     "type": "git",
